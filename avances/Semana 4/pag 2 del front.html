@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Centros de Salmones</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Contenedor principal con disposición en fila */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+    }
+
+    /* Menú lateral izquierdo */
+    .sidebar {
+      width: 250px;
+      border: 1px solid #ccc;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    /* Ícono superior del menú */
+    .icon {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Título del menú */
+    .menu-title {
+      background-color: #2f3b57;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Lista de centros */
+    .menu-item {
+      padding: 10px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      color: #2f3b57;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Botón de selección */
+    .main-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .main-button {
+      background-color: #2f3b57;
+      color: white;
+      padding: 20px 40px;
+      border: 1px solid #ccc;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Pie de página */
+    .footer {
+      background-color: #2f3b57;
+      height: 50px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Menú lateral con centros -->
+    <div class="sidebar">
+      <div class="icon">
+        <!-- Puedes reemplazar esto por una imagen con <img src="icono.png" /> -->
+        📊
+      </div>
+      <div class="menu-title">CENTRO DE SALMONES</div>
+      <div class="menu-item">CENTRO 1</div>
+      <div class="menu-item">CENTRO 2</div>
+      <div class="menu-item">CENTRO 3</div>
+      <div class="menu-item">CENTRO 4</div>
+      <div class="menu-item">CENTRO 5</div>
+      <div class="menu-item">CENTRO 6</div>
+      <div class="menu-item">CENTRO 7</div>
+      <div class="menu-item">CENTRO 8</div>
+    </div>
+
+    <!-- Botón de selección principal -->
+    <div class="main-button-container">
+      <div class="main-button">
+        SELECCIONE UN CENTRO
+        <!-- Cursor como ícono, se puede reemplazar con SVG o imagen -->
+        🖱️
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <div class="footer"></div>
+
+</body>
+</html>
