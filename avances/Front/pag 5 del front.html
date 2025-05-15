@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Datos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+    }
+
+    /* Botón superior izquierdo */
+    .datos-boton {
+      background-color: #2f3b57;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Formulario de entrada */
+    .formulario {
+      width: 250px;
+    }
+
+    .form-box {
+      border: 1px solid #ccc;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 0;
+    }
+
+    .form-section {
+      background-color: #2f3b57;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .form-input {
+      padding: 15px;
+      border-top: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .form-input label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-input input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+
+    /* Tabla resumen */
+    .tabla-box {
+      width: 500px;
+      border: 1px solid #ccc;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabla-header {
+      background-color: #2f3b57;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    td:first-child {
+      background-color: #f0f0f0;
+      color: #2f3b57;
+    }
+
+    /* Botón aceptar */
+    .boton-aceptar {
+      margin-top: 40px;
+      background-color: #2f3b57;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-color: #2f3b57;
+      height: 50px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Columna izquierda -->
+    <div class="formulario">
+      <button class="datos-boton">DATOS TABLA</button>
+      <div class="form-box">
+        <div class="form-section">BIÓMASA</div>
+        <div class="form-input">
+          <label>INGRESE REGISTRO:</label>
+          <input type="text" placeholder="...">
+        </div>
+        <div class="form-section">Mortalidad actual</div>
+        <div class="form-input">
+          <label>INGRESE REGISTRO:</label>
+          <input type="text" placeholder="...">
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <div>
+      <div class="tabla-box">
+        <div class="tabla-header">TABLA</div>
+        <table>
+          <tr>
+            <td>Biomasa</td>
+            <td>n/d</td>
+          </tr>
+          <tr>
+            <td>Mortalida actual</td>
+            <td>n/d</td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="boton-aceptar">ACEPTAR CAMBIOS</button>
+    </div>
+  </div>
+
+  <div class="footer"></div>
+
+</body>
+</html>
