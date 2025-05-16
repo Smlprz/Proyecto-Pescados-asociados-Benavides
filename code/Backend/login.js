@@ -1,7 +1,7 @@
-function login()
+function iniciosesion()
 {
     
-let user=document.getElementById("correo").value;
+let user=document.getElementById("email").value;
 let pass=document.getElementById("password").value;
 
 if(user=="ejemplo@gmail.com" && pass=="contraseña")
