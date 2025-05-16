@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to Aqua Benavides</title>
-
+  <script src="Backend/login.js"></script>
   <!-- Estilos CSS embebidos -->
   <style>
     /* Estilo para todo el cuerpo del documento */
@@ -118,7 +118,7 @@
       <!-- Campo: Correo electrónico -->
       <div class="form-group">
         <label for="email">CORREO ELECTRÓNICO</label>
-        <input type="email" id="email" placeholder="Eje: Momo.benavides@aqua.com" />
+        <input type="text" id="email" placeholder="Eje: Momo.benavides@aqua.com" />
       </div>
 
       <!-- Campo: Contraseña -->
@@ -136,8 +136,7 @@
       </div>
 
       <!-- Botón para enviar el formulario -->
-      <button type="submit" class="login-btn">LOGIN</button>
-    </form>
+      <input type="button" value="Iniciar Sesion" onclick="iniciosesion()">
   </div>
 </body>
 
