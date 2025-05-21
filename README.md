@@ -9,7 +9,7 @@ Proyecto académico sobre la creación de una pagina web para una empresa basada
 -[Tecnologias](#-tecnologias)
 -[Avances Semanales](#-avances-semanales)
 -[Despligue](#-despligue)
--[Licencia](#-licencia)
+-[Licencia](#-licencia-https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/blob/main/LICENSE)
 
 ---
 
@@ -24,7 +24,7 @@ Proyecto académico sobre la creación de una pagina web para una empresa basada
 ---
 
 ## Tecnologias💻
--HTML 5
+-HTML 5 
 -JavaScript
 -SQL
 -Git y Github
