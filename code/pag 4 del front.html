@@ -127,10 +127,6 @@
           <td id="oxigeno">Cargando...</td>
         </tr>
         <tr>
-          <td>Natalidad actual</td>
-          <td id="natalidad_actual">Cargando...</td>
-        </tr>
-        <tr>
           <td>Mortalidad esperada</td>
           <td id="mortalidad_esperada">Cargando...</td>
         </tr>
@@ -153,6 +149,7 @@
             document.getElementById('temperatura').textContent = data.TEMPERATURA ?? 'n/d';
             document.getElementById('oxigeno').textContent = data.OXIGENO ?? 'n/d';
             document.getElementById('mortalidad_esperada').textContent = data.mortalidad_esperada ?? 'n/d';
+            document.getElementById('mortalidad_esperada').textContent = data.MUERTEESP ?? 'n/d';
           } else {
             alert('No se encontraron datos o ocurrió un error.');
           }
