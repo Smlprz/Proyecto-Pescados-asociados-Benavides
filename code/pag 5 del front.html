@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Formulario de Datos</title>
+  <script src="Backend/menusalmones.js"></script>
   <style>
     body {
       margin: 0;
@@ -123,19 +123,23 @@
   <div class="container">
     <!-- Columna izquierda -->
     <div class="formulario">
-      <button class="datos-boton">DATOS TABLA</button>
-      <div class="form-box">
-        <div class="form-section">BIÓMASA</div>
-        <div class="form-input">
-          <label>INGRESE REGISTRO:</label>
-          <input type="text" placeholder="...">
+      <button  onclick="jaula101()" class="datos-boton">DATOS TABLA</button>
+      <form id="formDatos">
+        <div class="form-box">
+          <div class="form-section">BIÓMASA</div>
+          <div class="form-input">
+            <label>INGRESE REGISTRO:</label>
+            <input type="text" name="biomasa" placeholder="..." required>
+          </div>
+          <div class="form-section">Mortalidad actual</div>
+          <div class="form-input">
+            <label>INGRESE REGISTRO:</label>
+            <input type="text" name="muerteact" placeholder="..." required>
+          </div>
         </div>
-        <div class="form-section">Mortalidad actual</div>
-        <div class="form-input">
-          <label>INGRESE REGISTRO:</label>
-          <input type="text" placeholder="...">
-        </div>
-      </div>
+        <button class="boton-aceptar" type="submit">ACEPTAR CAMBIOS</button>
+      </form>
+      <p id="respuesta" style="margin-top: 15px; color: green;"></p>
     </div>
 
     <!-- Columna derecha -->
@@ -148,17 +152,42 @@
             <td>n/d</td>
           </tr>
           <tr>
-            <td>Mortalida actual</td>
+            <td>Mortalidad actual</td>
             <td>n/d</td>
           </tr>
         </table>
       </div>
-
-      <button class="boton-aceptar">ACEPTAR CAMBIOS</button>
     </div>
   </div>
 
   <div class="footer"></div>
 
+  <script>
+    document.getElementById('formDatos').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      fetch('insertar.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(resp => resp.json())
+      .then(data => {
+        const respuesta = document.getElementById('respuesta');
+        if (data.success) {
+          respuesta.style.color = 'green';
+          respuesta.textContent = data.message;
+        } else {
+          respuesta.style.color = 'red';
+          respuesta.textContent = data.error;
+        }
+      })
+      .catch(error => {
+        document.getElementById('respuesta').style.color = 'red';
+        document.getElementById('respuesta').textContent = 'Error en la solicitud.';
+        console.error('Error:', error);
+      });
+    });
+  </script>
 </body>
 </html>

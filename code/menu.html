@@ -6,7 +6,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to Aqua Benavides</title>
-  <script src="Backend/login.js"></script>
   <!-- Estilos CSS embebidos -->
   <style>
     /* Estilo para todo el cuerpo del documento */
@@ -113,18 +112,18 @@
   <!-- Contenedor principal del formulario -->
   <div class="login-container">
     <!-- Inicio del formulario -->
-    <form>
+    <form action="iniciosesion.php" method="POST">
 
       <!-- Campo: Correo electrónico -->
       <div class="form-group">
         <label for="email">CORREO ELECTRÓNICO</label>
-        <input type="text" id="email" placeholder="Eje: Momo.benavides@aqua.com" />
+        <input type="text" id="email" placeholder="Eje: Momo.benavides@aqua.com" name="email" required />
       </div>
 
       <!-- Campo: Contraseña -->
       <div class="form-group">
         <label for="password">CONTRASEÑA</label>
-        <input type="password" id="password" placeholder="********" />
+        <input type="password" id="password" placeholder="********" name="password" required />
       </div>
 
       <!-- Checkbox: Aceptación de términos -->
@@ -136,7 +135,7 @@
       </div>
 
       <!-- Botón para enviar el formulario -->
-      <input type="button" value="Iniciar Sesion" onclick="iniciosesion()">
+      <input type="submit" value="Iniciar Sesion" name="usuario">
   </div>
 </body>
 
