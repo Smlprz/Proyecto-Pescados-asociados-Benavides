@@ -25,8 +25,7 @@ Proyecto académico sobre la creación de una pagina web para una empresa basada
 
 ## Tecnologias💻
 -HTML 5 
--JavaScript![image](https://github.com/user-attachments/assets/95e31485-5eae-4648-9541-db9448173758)
-
+-JavaScript
 -SQL
 -Git y Github
 -PHP
