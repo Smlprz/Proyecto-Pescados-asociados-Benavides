@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 include("conexion.php"); 
 
 if ($conn) {
-    $jaulac = "SELECT * FROM jaulainf WHERE JAULAID=101 AND FECHA=CURRENT_DATE";
+    $jaulac = "SELECT ji.*, j.MUERTEESP FROM jaulainf ji JOIN jaula j ON ji.JAULAID = j.JAULAID WHERE ji.JAULAID=101 AND FECHA=CURRENT_DATE";
     $jaular = mysqli_query($conn, $jaulac);
     if (mysqli_num_rows($jaular) > 0) {
         $data = mysqli_fetch_assoc($jaular);
