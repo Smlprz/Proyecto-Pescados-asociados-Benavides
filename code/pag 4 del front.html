@@ -135,11 +135,11 @@
   </div>
 
   <!-- Botón de actualizar -->
-  <button class="update-button" onclick="actualizardatos()">ACTUALIZAR DATOS TABLA</button>
+  <button class="update-button" onclick="mostrardatos()">ACTUALIZAR DATOS TABLA</button>
 
   <!-- Script que obtiene los datos -->
   <script>
-    function actualizardatos() {
+    function mostrardatos() {
       fetch('mostrar.php')
         .then(response => response.json())
         .then(data => {
@@ -161,7 +161,7 @@
     }
 
     // Ejecutar al cargar la página automáticamente
-    actualizardatos();
+    mostrardatos();
   </script>
 
 </body>
