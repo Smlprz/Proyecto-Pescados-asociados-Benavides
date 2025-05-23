@@ -28,7 +28,8 @@ Proyecto académico sobre la creación de una pagina web para una empresa basada
 -JavaScript
 -SQL
 -Git y Github
--Frameworks
+-PHP
+-Xampp
 
 ---
 
