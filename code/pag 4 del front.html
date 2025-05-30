@@ -133,33 +133,8 @@
       </table>
     </div>
   </div>
-   <!-- Botón de actualizar -->
   <button class="update-button" onclick="actualizardatos()">ACTUALIZAR DATOS TABLA</button>
-
-  <!-- Script que obtiene los datos -->
   <script>
-    function mostrardatos() {
-      fetch('mostrar.php')
-        .then(response => response.json())
-        .then(data => {
-          if (data && !data.error) {
-            document.getElementById('biomasa').textContent = data.BIOMASA ?? 'n/d';
-            document.getElementById('mortalidad_actual').textContent = data.MUERTEACT ?? 'n/d';
-            document.getElementById('temperatura').textContent = data.TEMPERATURA ?? 'n/d';
-            document.getElementById('oxigeno').textContent = data.OXIGENO ?? 'n/d';
-            document.getElementById('mortalidad_esperada').textContent = data.mortalidad_esperada ?? 'n/d';
-            document.getElementById('mortalidad_esperada').textContent = data.MUERTEESP ?? 'n/d';
-          } else {
-            alert('No se encontraron datos o ocurrió un error.');
-          }
-        })
-        .catch(error => {
-          console.error('Error al obtener los datos:', error);
-          alert('Error al obtener los datos.');
-        });
-    }
-
-    // Ejecutar al cargar la página automáticamente
     mostrardatos();
   </script>
 </body>
