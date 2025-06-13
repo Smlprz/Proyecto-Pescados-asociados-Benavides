@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Centros de Salmones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      padding: 60px 80px;
+      gap: 60px;
+      position: relative;
+    }
+
+    .sidebar {
+      width: 260px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .icon {
+      font-size: 48px;
+      text-align: center;
+      margin: 28px 0;
+      user-select: none;
+    }
+
+    .menu-title {
+      background-color: #2f3b57;
+      color: white;
+      padding: 16px 0;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      font-size: 18px;
+      user-select: none;
+    }
+
+    .menu-item {
+      padding: 16px 0;
+      text-align: center;
+      border-top: 1px solid #eee;
+      color: #2f3b57;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+
+    .menu-item:hover {
+      background-color: #e6eef9;
+      color: #1a2a40;
+    }
+
+    .main-button-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-button {
+      background-color: #2f3b57;
+      color: white;
+      padding: 26px 56px;
+      border: none;
+      border-radius: 14px;
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 16px 36px rgba(47, 59, 87, 0.25);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    .main-button:hover {
+      background-color: #1d2b45;
+      box-shadow: 0 18px 44px rgba(29, 43, 69, 0.35);
+    }
+
+    /* Botón Volver estilizado */
+    .back-button {
+      position: fixed;
+      top: 40px;
+      left: 40px;
+      background-color: transparent;
+      color: #2f3b57;
+      border: 2.5px solid #2f3b57;
+      padding: 12px 24px;
+      border-radius: 36px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(47, 59, 87, 0.15);
+      user-select: none;
+      z-index: 1000;
+    }
+
+    .back-button:hover {
+      background-color: #2f3b57;
+      color: white;
+    }
+
+    .back-button svg path {
+      stroke: #2f3b57;
+      transition: stroke 0.3s ease;
+    }
+
+    .back-button:hover svg path {
+      stroke: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón para volver -->
+  <a href="javascript:history.back()" class="back-button" aria-label="Volver a la página anterior">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon-left" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 19l-7-7 7-7" />
+    </svg>
+    Volver
+  </a>
+
+  <div class="container">
+    <!-- Menú lateral -->
+    <div class="sidebar" role="navigation" aria-label="Menú de centros de salmones">
+      <div class="icon" aria-hidden="true">🐟</div>
+      <div class="menu-title">CENTROS DE SALMÓN</div>
+      <div class="menu-item" tabindex="0">CENTRO 1</div>
+      <div class="menu-item" tabindex="0">CENTRO 2</div>
+      <div class="menu-item" tabindex="0">CENTRO 3</div>
+      <div class="menu-item" tabindex="0">CENTRO 4</div>
+      <div class="menu-item" tabindex="0">CENTRO 5</div>
+      <div class="menu-item" tabindex="0">CENTRO 6</div>
+      <div class="menu-item" tabindex="0">CENTRO 7</div>
+      <div class="menu-item" tabindex="0">CENTRO 8</div>
+    </div>
+
+    <!-- Botón principal -->
+    <div class="main-button-container">
+      <button class="main-button" type="button" aria-label="Seleccionar centro">
+        🖱️ SELECCIONE UN CENTRO
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
