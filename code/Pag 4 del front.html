@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jaula 101</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+      color: #2f3b57;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+    }
+
+    /* Botón volver */
+    .back-button {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      background-color: transparent;
+      border: 3px solid #2f3b57;
+      color: #2f3b57;
+      padding: 14px 36px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 25px rgba(47, 59, 87, 0.2);
+      transition: all 0.35s ease;
+      text-decoration: none;
+      z-index: 1000;
+    }
+    .back-button:hover {
+      background-color: #2f3b57;
+      color: white;
+      box-shadow: 0 12px 35px rgba(47, 59, 87, 0.35);
+    }
+    .back-button svg path {
+      stroke: #2f3b57;
+      stroke-width: 2.5;
+      transition: stroke 0.35s ease;
+    }
+    .back-button:hover svg path {
+      stroke: white;
+    }
+
+    /* Contenedor principal */
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      gap: 60px;
+      padding: 80px 60px 40px;
+      margin-top: 70px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-grow: 1;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #ffffffcc;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(47, 59, 87, 0.15);
+      padding: 40px 30px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .sidebar button {
+      padding: 18px 0;
+      font-weight: 700;
+      font-size: 18px;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+
+    .center-button {
+      background-color: #2f3b57;
+      color: white;
+      box-shadow: 0 8px 20px rgba(47, 59, 87, 0.3);
+    }
+    .center-button:hover {
+      background-color: #24304a;
+    }
+
+    .cage-button {
+      background-color: #d9e1f2;
+      color: #2f3b57;
+      box-shadow: 0 8px 20px rgba(47, 59, 87, 0.15);
+    }
+    .cage-button:hover {
+      background-color: #bac6e5;
+    }
+
+    /* Tabla de datos */
+    .table-container {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(47, 59, 87, 0.18);
+      flex-grow: 1;
+      padding: 40px 60px 60px;
+      max-width: 700px;
+      user-select: none;
+    }
+
+    .table-title {
+      background-color: #2f3b57;
+      color: white;
+      font-weight: 700;
+      font-size: 26px;
+      text-align: center;
+      padding: 22px 0;
+      border-radius: 20px 20px 0 0;
+      margin: -40px -60px 40px -60px;
+      letter-spacing: 1.2px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      user-select: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 20px;
+    }
+
+    tr {
+      background: #f0f4fc;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(47, 59, 87, 0.12);
+    }
+
+    td {
+      padding: 20px 25px;
+      font-weight: 600;
+      font-size: 18px;
+      color: #2f3b57;
+      text-align: left;
+      vertical-align: middle;
+      user-select: text;
+    }
+
+    td:first-child {
+      font-weight: 700;
+      width: 50%;
+    }
+
+    td:last-child {
+      text-align: right;
+      font-weight: 500;
+      color: #445274;
+      font-size: 18px;
+    }
+
+    /* Botón actualizar */
+    .update-button {
+      margin: 40px auto 60px;
+      display: block;
+      background-color: #2f3b57;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      border-radius: 40px;
+      padding: 18px 60px;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(47, 59, 87, 0.3);
+      transition: background-color 0.35s ease, box-shadow 0.35s ease;
+      user-select: none;
+    }
+    .update-button:hover {
+      background-color: #1c2641;
+      box-shadow: 0 18px 40px rgba(47, 59, 87, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón volver -->
+  <button class="back-button" aria-label="Volver a la página anterior" onclick="centro1()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 19l-7-7 7-7" stroke="#2f3b57" stroke-width="2.5"/>
+    </svg>
+    Volver
+  </button>
+
+  <div class="container" role="main">
+    <!-- Sidebar con centro y jaula -->
+    <aside class="sidebar" aria-label="Información del centro y jaula">
+      <button class="center-button" aria-current="true">CENTRO 1</button>
+      <button class="cage-button" aria-current="true">JAULA 101</button>
+    </aside>
+
+    <!-- Tabla con datos -->
+    <section class="table-container" aria-label="Datos de la jaula 101">
+      <div class="table-title">JAULA SELECCIONADA 101</div>
+      <table>
+        <tbody>
+          <tr>
+            <td>Bíomasa</td>
+            <td id="biomasa">Cargando...</td>
+          </tr>
+          <tr>
+            <td>Mortalidad actual</td>
+            <td id="mortalidad_actual">Cargando...</td>
+          </tr>
+          <tr>
+            <td>Temperatura</td>
+            <td id="temperatura">Cargando...</td>
+          </tr>
+          <tr>
+            <td>Oxígeno</td>
+            <td id="oxigeno">Cargando...</td>
+          </tr>
+          <tr>
+            <td>Mortalidad esperada</td>
+            <td id="mortalidad_esperada">Cargando...</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <button class="update-button" onclick="actualizardatos()">ACTUALIZAR DATOS TABLA</button>
+
+  <script src="Backend/menusalmones.js"></script>
+  <script>
+    // Mostrar datos al cargar
+    if (typeof mostrardatos === 'function') {
+      mostrardatos();
+    }
+  </script>
+</body>
+</html>
