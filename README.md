@@ -38,6 +38,7 @@ Proyecto académico sobre la creación de una pagina web para una empresa basada
 1. Clonar el repositorio:
 ```bash
 git clone https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides.git
+
 ```
 
 ---
@@ -52,3 +53,9 @@ git clone https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides.git
 |📂Semana 5         | Frontend en desarrollo|[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/Semana%205]()|
 |📂Semana 6         | Creacion de carta gant y finalizacion de base de datos y frontend |[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/Semana%206]()|
 |📂Semana 7         | Base de datos|[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/base-de-datos https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/code]()|
+|📂Semana 8         | Frontend en desarrollo|[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/Semana%205]()|
+|📂Semana 9         | Frontend en desarrollo|[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/Semana%205]()|
+|📂Semana 10        | Frontend en desarrollo|[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/Semana%205]()|
+|📂Semana 11        | Frontend en desarrollo|[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/Semana%205]()|
+|📂Semana 12        | Frontend en desarrollo|[https://github.com/Smlprz/Proyecto-Pescados-asociados-Benavides/tree/main/avances/Semana%205]()|
+
