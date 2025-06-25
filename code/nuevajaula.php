@@ -1,14 +1,5 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "SALMONERA";
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
+include("conexion.php");
 if (
     isset($_POST['jaulaid']) &&
     isset($_POST['centro']) &&
