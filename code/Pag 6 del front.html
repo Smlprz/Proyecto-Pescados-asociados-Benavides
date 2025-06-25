@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Jaula 101</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: url('Imagen-de-fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e3a59;
+            margin-bottom: 30px;
+        }
+
+        canvas {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Comparación Mortalidad</h2>
+    <canvas id="barra"></canvas>
+
+    <h2>Evolución Histórica</h2>
+    <canvas id="linea"></canvas>
+</div>
+
+<script>
+    fetch('informe.php')
+        .then(response => response.json())
+        .then(data => {
+            const ctxBarra = document.getElementById('barra').getContext('2d');
+            new Chart(ctxBarra, {
+                type: 'bar',
+                data: {
+                    labels: ['Actual', 'Esperada'],
+                    datasets: [{
+                        label: 'Última semana',
+                        data: [data.porcentajeActual, data.porcentajeEsperado],
+                        backgroundColor: ['#ff6384', '#36a2eb']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => ctx.raw.toFixed(2) + '%' } }
+                    },
+                    scales: {
+                        y: {
+                            title: { display: true, text: 'Porcentaje (%)' },
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            const ctxLinea = document.getElementById('linea').getContext('2d');
+            new Chart(ctxLinea, {
+                type: 'line',
+                data: {
+                    labels: data.fechas,
+                    datasets: [{
+                        label: 'Mortalidad Actual',
+                        data: data.muertes,
+                        fill: true,
+                        borderColor: '#ff6384',
+                        backgroundColor: 'rgba(255,99,132,0.2)',
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Muertes acumuladas' }
+                        },
+                        x: {
+                            title: { display: true, text: 'Fecha' }
+                        }
+                    }
+                }
+            });
+        });
+</script>
+</body>
+</html>
