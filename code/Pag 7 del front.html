@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Nueva Jaula</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url('Imagen-de-fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            margin: 40px auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            background-color: #2e3a59;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            margin: -30px -30px 30px -30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd1d9;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 24px;
+            background-color: #2e3a59;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #1f2a3f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>AGREGAR NUEVA JAULA</h2>
+        <form action="nuevajaula.php" method="post">
+            <label for="jaulaid">Número de Jaula</label>
+            <input type="number" id="jaulaid" name="jaulaid" placeholder="Ej: 113" required>
+
+            <label for="centro">Centro (Ubicación)</label>
+            <select id="centro" name="centro" required>
+                <option value="">Seleccione una ubicación</option>
+                <option value="10">Puerto Montt</option>
+                <option value="20">Castro</option>
+                <option value="30">Ancud</option>
+                <option value="40">Calbuco</option>
+                <option value="50">Maullin</option>
+                <option value="60">Calbuco</option>
+                <option value="70">Dalcahue</option>
+                <option value="80">Chonchi</option>
+            </select>
+
+            <label for="biomasa">Biomasa Inicial (kg)</label>
+            <input type="number" id="biomasa" name="biomasa" placeholder="Ej: 1500" required>
+
+            <label for="muerteesp">Mortalidad Esperada (%)</label>
+            <input type="number" id="muerteesp" name="muerteesp" placeholder="Ej: 25" required>
+
+            <label for="cosecha">Cosecha Inicial (kg)</label>
+            <input type="number" id="cosecha" name="cosecha" placeholder="Ej: 50000" required>
+
+            <button type="submit">GUARDAR JAULA</button>
+        </form>
+    </div>
+</body>
+</html>
